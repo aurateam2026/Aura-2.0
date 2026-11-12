@@ -313,9 +313,9 @@
     histIn.append(histVideo, down, compress, arrow, memory, lhimLabel);
     const ret = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     ret.setAttribute('class', 'fw-return');
-    ret.setAttribute('viewBox', '0 0 200 190');
     ret.setAttribute('aria-hidden', 'true');
-    ret.innerHTML = '<defs><marker id="fwRet" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#3D8BFF"/></marker></defs><path d="M62 172 C 58 100, 96 28, 168 46" fill="none" stroke="#3D8BFF" stroke-width="2" marker-end="url(#fwRet)"/>';
+    ret.dataset.step = '1';
+    ret.innerHTML = '<defs><marker id="fwRet" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#3D8BFF"/></marker></defs><path class="fw-return-line" d="" fill="none" stroke="#3D8BFF" stroke-width="2" stroke-linejoin="round" marker-end="url(#fwRet)"/>';
     const liveIn = document.createElement('div');
     liveIn.className = 'fw-live';
     const exAIn = document.createElement('div');
@@ -335,6 +335,27 @@
     liveIn.append(exAIn, exBIn);
     input.append(histIn, liveIn);
     board.append(output, model, input, ret);
+    // Right-angle return arrow: from the memory pill, right into the gap, then up into the model bar.
+    const drawReturn = () => {
+      const b = board.getBoundingClientRect();
+      if (!b.width || !board.offsetWidth) return;
+      const k = b.width / board.offsetWidth;
+      const m = memory.getBoundingClientRect();
+      const side = histIn.getBoundingClientRect();
+      const bar = model.getBoundingClientRect();
+      const x0 = (m.right - b.left) / k;
+      const y0 = (m.top + m.height / 2 - b.top) / k;
+      const x1 = (side.right - b.left) / k + 9;
+      const y1 = (bar.bottom - b.top) / k + 4;
+      ret.querySelector('.fw-return-line').setAttribute('d', `M${x0.toFixed(1)} ${y0.toFixed(1)} H${x1.toFixed(1)} V${y1.toFixed(1)}`);
+    };
+    requestAnimationFrame(drawReturn);
+    window.addEventListener('resize', drawReturn);
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(drawReturn);
+      ro.observe(board);
+      ro.observe(memory);
+    }
 
     const caption = document.createElement('p');
     caption.className = 'sv-caption';

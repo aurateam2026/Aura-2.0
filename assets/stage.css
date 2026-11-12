@@ -186,7 +186,9 @@
 .lhim.is-future{opacity:.28}
 .lhim.is-now{border-style:solid;border-color:#6d5ef0;box-shadow:0 0 18px #6d5ef033}
 .fw{position:relative;display:flex;flex-direction:column;gap:10px;min-width:680px}
-.fw-return{position:absolute;left:90px;top:70px;width:200px;height:190px;overflow:visible;pointer-events:none;z-index:3}
+.fw-return{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:3}
+.fw .fw-return[data-step]{box-shadow:none!important;filter:none!important;opacity:1;transition:opacity .45s ease}
+.fw .fw-return[data-step].is-future{opacity:0}
 .fw .tok,.fw .chunk{width:100%;min-width:0;height:28px;padding:0 8px;border-radius:6px;font-size:10px}
 .fw-band{display:grid;grid-template-columns:210px minmax(0,1fr);gap:18px;align-items:center}
 .fw-live{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;align-items:start;min-width:0}
