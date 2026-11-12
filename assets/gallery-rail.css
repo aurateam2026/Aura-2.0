@@ -1,0 +1,18 @@
+/* Full-bleed demo rails, with headings aligned to the page content. */
+#demos{overflow:hidden}
+#demos>.wrap>.section-head:first-child h2{font-size:clamp(38px,5vw,64px);line-height:1.08;letter-spacing:-.045em;color:#f1f5ff}
+#demos>.wrap>.section-head:first-child>p{color:#a2b1c9;line-height:1.8}
+#single-gallery .single-row{margin:0 0 30px!important}
+#single-gallery .single-row-head{padding:6px 0 13px!important}
+#single-gallery .single-row-head h3{display:flex;align-items:center;gap:10px;color:#e2ebf9;font-size:12px!important;letter-spacing:.12em;text-transform:uppercase;font-weight:650}
+#single-gallery .single-row-head h3:before{content:'';width:7px;height:7px;flex:none;border-radius:50%;background:#8cbcff;box-shadow:0 0 12px #80afff99}
+#single-gallery .single-row:nth-child(2) .single-row-head h3:before{background:#b3a4ed}
+#single-gallery .single-row:nth-child(3) .single-row-head h3:before{background:#84d1bf}
+#single-gallery .single-viewport{position:relative;left:50%;width:100vw;margin-left:-50vw!important;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%)}
+#single-gallery .single-track{padding:2px 0 6px}
+#single-gallery .single-card{width:240px;padding:0;overflow:hidden;text-align:left;border-radius:13px;background:#111c2d;border-color:#ffffff20}
+#single-gallery .single-visual{border-radius:0;aspect-ratio:16/9}
+#single-gallery .single-card strong{min-height:56px;padding:13px 15px;color:#d6e3f4;font-size:13px;font-weight:560;line-height:1.4;letter-spacing:.005em}
+#single-gallery .single-toggle{font-size:11px;color:#8fa4c1;letter-spacing:.02em}
+#single-gallery .single-toggle:hover{color:#dceaff}
+@media(max-width:700px){#demos>.wrap>.section-head:first-child h2{font-size:38px}#single-gallery .single-card{width:210px}#single-gallery .single-viewport{mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent)}#single-gallery .single-row-head h3{font-size:10px!important;letter-spacing:.07em}}

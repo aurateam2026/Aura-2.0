@@ -1,0 +1,7 @@
+/* Demo gallery cards match the site's dark palette. */
+#single-gallery .single-card{background:linear-gradient(160deg,#18263b,#111b2b);border-color:#34465f;color:#e2ebfa;transition:border-color .2s,box-shadow .2s,background .2s}
+#single-gallery .single-card:hover,#single-gallery .single-card:focus-visible{border-color:#87a9d8}
+#single-gallery .single-card.selected{border-color:#9bbff1;box-shadow:0 0 0 2px #739bd466}
+#single-gallery .single-visual{background:linear-gradient(145deg,#23354a,#192a3f);color:#a9bfd9}
+#single-gallery .single-toggle{color:#9db4d2}
+#single-gallery .single-toggle:hover{color:#e1edff}

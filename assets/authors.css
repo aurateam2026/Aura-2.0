@@ -1,0 +1,67 @@
+.authors-block {
+  padding: 24px 0 52px;
+  text-align: center;
+}
+
+.authors-block #authors-heading {
+  margin: 0 0 34px;
+  color: #e98b64;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.authors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  color: #e8e5e2;
+  font-size: clamp(17px, 2vw, 23px);
+  line-height: 1.7;
+}
+
+.authors-list li {
+  white-space: nowrap;
+}
+
+.authors-block sup {
+  margin-left: 2px;
+  font-size: 0.65em;
+  line-height: 0;
+}
+
+.authors-affiliations,
+.authors-notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 30px;
+  color: #c6c3c1;
+}
+
+.authors-affiliations {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 1px solid #ffffff1c;
+  font-size: clamp(15px, 1.7vw, 19px);
+}
+
+.authors-affiliations sup {
+  color: #e98b64;
+}
+
+.authors-notes {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .authors-block { padding-bottom: 36px; }
+  .authors-list { gap: 10px 18px; }
+  .authors-affiliations, .authors-notes { gap: 10px 18px; }
+}
