@@ -348,16 +348,6 @@ window.AURA_SINGLE_DEMOS[0].items = [
     }
   },
   {
-    "title": "Street architecture",
-    "video": "https://huggingface.co/datasets/aurateam/Aura_2_0_DEMOS/resolve/main/mic/eval_video_12.mp4",
-    "poster": "",
-    "recordings": {
-      "visual": {
-        "events": []
-      }
-    }
-  },
-  {
     "title": "Snowy mountain hike",
     "video": "https://huggingface.co/datasets/aurateam/Aura_2_0_DEMOS/resolve/main/mic/eval_video_2.mp4",
     "poster": "",
