@@ -15,7 +15,10 @@ const paths={
 };
 function art(name){return `<svg viewBox="0 0 200 135" aria-hidden="true" fill="none" stroke="#587057" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${paths[name]||paths.target}</svg>`;}
 const resources=document.getElementById('resource-links');
+// index.html includes crawlable links; only populate older pages with an empty container.
+if(resources && !resources.children.length){
 for(const item of config.resources){const el=document.createElement(item.url?'a':'span');el.textContent=item.label;if(item.url){el.href=item.url;el.target='_blank';el.rel='noopener noreferrer';}else{const hint=document.createElement('small');hint.textContent='Coming soon';el.append(hint);}resources.append(el);}
+}
 const grid=document.getElementById('demo-grid');
 grid.innerHTML=config.demos.map((d,i)=>`<article class="demo-card" data-id="${escapeHTML(d.id)}"><div class="demo-art" style="--card-bg:${d.color}"><span>${d.video?'产品实录':d.kind==='single'?'单项能力 · 实录待补充':'场景脚本 · 实录待补充'}</span>${art(d.art)}<b class="art-number">${String(i+1).padStart(2,'0')}</b></div><div class="demo-body"><h3>${escapeHTML(d.title)}</h3><div class="tags">${d.tags.map(t=>`<span>${labels[t]}</span>`).join('')}</div><p>${escapeHTML(d.desc)}</p><button data-demo="${escapeHTML(d.id)}">${d.video?'播放 Demo':'查看场景脚本'} <span aria-hidden="true">↗</span></button></div></article>`).join('');
 function filterDemos(filter){document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter===filter;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});for(const d of config.demos){grid.querySelector(`[data-id="${d.id}"]`).hidden=!(filter==='all'||d.kind===filter||d.tags.includes(filter));}}
