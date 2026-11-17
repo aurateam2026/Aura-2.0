@@ -1,8 +1,10 @@
 // 填入真实链接后，页面按钮自动启用。Demo 的 video / poster 可用相对路径。
 window.AURA_CONTENT = {
   resources: [
-    {label:'Hugging Face',url:''},{label:'GitHub',url:''},
-    {label:'Technical Report',url:''}
+    {label:'Hugging Face · Aura2.0',url:'https://huggingface.co/aurateam/AURA_2'},
+    {label:'Hugging Face · Aura2.0 BF8',url:'https://huggingface.co/aurateam/AURA_2_BF8'},
+    {label:'GitHub',url:'https://github.com/aurateam2026/Aura2.0'},
+    {label:'Technical Report · arXiv',url:'https://arxiv.org/pdf/2611.17048'}
   ],
   data: [
     {name:'主动服务',percent:35,color:'#557ba7',detail:'事件触发、长时等待、无需回应、任务取消与意图变化'},
